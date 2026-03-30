@@ -15,7 +15,7 @@
  *
  * @file laser_scan_merger.hpp
  * @author Bruce Chan Jian Le (jianle001@e.ntu.edu.sg)
- * @brief Point cloud merger (up to 9 point cloud) 
+ * @brief Point cloud merger (up to 9 point cloud)
  * @version 1.0.0
  * @date 2025-05-29
  *
@@ -25,9 +25,9 @@
 // ROS2
 #include "rclcpp/rclcpp.hpp"
 
-#include "message_filters/subscriber.h"
-#include "message_filters/synchronizer.h"
-#include "message_filters/sync_policies/approximate_time.h"
+#include "message_filters/subscriber.hpp"
+#include "message_filters/synchronizer.hpp"
+#include "message_filters/sync_policies/approximate_time.hpp"
 
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "sensor_msgs/msg/point_cloud2.hpp"
@@ -78,17 +78,17 @@ namespace util
     typedef const std::shared_ptr<const nullMsgT> nullCBMsgT;
 
     typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&)> cbT9;
-    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, nullCBMsgT&)> cbT8;
-    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, nullCBMsgT&, nullCBMsgT&)> cbT7;
-    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&)> cbT6;
-    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&)> cbT5;
-    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&)> cbT4;
-    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&)> cbT3;
-    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&, nullCBMsgT&)> cbT2;
+    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&)> cbT8;
+    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&)> cbT7;
+    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&)> cbT6;
+    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&)> cbT5;
+    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&)> cbT4;
+    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&, laserScanCBMsgT&)> cbT3;
+    typedef std::function<void(laserScanCBMsgT&, laserScanCBMsgT&)> cbT2;
 
     /**
      * \brief Construct a new laser scan merger object
-     * 
+     *
      * \param options ros2 node options
      */
     explicit LaserScanMerger(const rclcpp::NodeOptions &opt);

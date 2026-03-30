@@ -15,7 +15,7 @@
  *
  * @file laser_scan_merger.cpp
  * @author Bruce Chan Jian Le (jianle001@e.ntu.edu.sg)
- * @brief Laser scan merger (up to 9 laser scan) 
+ * @brief Laser scan merger (up to 9 laser scan)
  * @version 1.0.0
  * @date 2025-05-29
  *
@@ -354,7 +354,7 @@ namespace util
           (&scan_sync_))
       {
         (*v)->registerCallback<cbT2>
-          ([this](auto& cloud0, auto& cloud1, ...)
+          ([this](auto& cloud0, auto& cloud1)
            { laserScanMergerPrep(cloud0, cloud1); });
       }
     }
@@ -369,7 +369,7 @@ namespace util
           (&scan_sync_))
       {
         (*v)->registerCallback<cbT3>
-          ([this](auto& cloud0, auto& cloud1, auto& cloud2, ...)
+          ([this](auto& cloud0, auto& cloud1, auto& cloud2)
            { laserScanMergerPrep(cloud0, cloud1, cloud2); });
       }
     }
@@ -384,7 +384,7 @@ namespace util
           (&scan_sync_))
       {
         (*v)->registerCallback<cbT4>
-          ([this](auto& cloud0, auto& cloud1, auto& cloud2, auto& cloud3, ...)
+          ([this](auto& cloud0, auto& cloud1, auto& cloud2, auto& cloud3)
            { laserScanMergerPrep(cloud0, cloud1, cloud2, cloud3); });
       }
     }
@@ -400,7 +400,7 @@ namespace util
       {
         (*v)->registerCallback<cbT5>
           ([this](auto& cloud0, auto& cloud1, auto& cloud2,
-                  auto& cloud3, auto& cloud4, ...)
+                  auto& cloud3, auto& cloud4)
            { laserScanMergerPrep(cloud0, cloud1, cloud2, cloud3, cloud4); });
       }
     }
@@ -417,7 +417,7 @@ namespace util
       {
         (*v)->registerCallback<cbT6>
           ([this](auto& cloud0, auto& cloud1, auto& cloud2,
-                  auto& cloud3, auto& cloud4, auto& cloud5, ...)
+                  auto& cloud3, auto& cloud4, auto& cloud5)
            { laserScanMergerPrep(cloud0, cloud1, cloud2, cloud3, cloud4, cloud5); });
       }
     }
@@ -435,7 +435,7 @@ namespace util
         (*v)->registerCallback<cbT7>
           ([this](auto& cloud0, auto& cloud1, auto& cloud2,
                   auto& cloud3, auto& cloud4, auto& cloud5,
-                  auto& cloud6, ...)
+                  auto& cloud6)
            { laserScanMergerPrep(cloud0, cloud1, cloud2, cloud3, cloud4, cloud5, cloud6); });
       }
     }
@@ -454,7 +454,7 @@ namespace util
         (*v)->registerCallback<cbT8>
           ([this](auto& cloud0, auto& cloud1, auto& cloud2,
                   auto& cloud3, auto& cloud4, auto& cloud5,
-                  auto& cloud6, auto& cloud7, ...)
+                  auto& cloud6, auto& cloud7)
            { laserScanMergerPrep(cloud0, cloud1, cloud2, cloud3, cloud4, cloud5, cloud6, cloud7); });
       }
     }
